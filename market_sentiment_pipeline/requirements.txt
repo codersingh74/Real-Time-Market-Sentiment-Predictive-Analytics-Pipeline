@@ -1,0 +1,41 @@
+# ============================================================
+#  Market Sentiment Pipeline — Python Dependencies
+# ============================================================
+
+# ── Core ─────────────────────────────────────────────────────
+python-dotenv==1.0.0
+
+# ── Kafka ────────────────────────────────────────────────────
+kafka-python==2.0.2
+
+# ── Data APIs ────────────────────────────────────────────────
+tweepy==4.14.0
+praw==7.7.1
+requests==2.31.0
+
+# ── Data processing ──────────────────────────────────────────
+pandas==2.1.4
+numpy==1.26.3
+
+# ── Sentiment analysis ───────────────────────────────────────
+vaderSentiment==3.3.2
+
+# ── Machine learning ─────────────────────────────────────────
+scikit-learn==1.4.0
+
+# ── Database ─────────────────────────────────────────────────
+psycopg2-binary==2.9.9
+SQLAlchemy==2.0.25
+
+# ── Dashboard ────────────────────────────────────────────────
+streamlit==1.31.0
+plotly==5.18.0
+
+# ── Airflow (install separately with extras) ─────────────────
+# apache-airflow==2.8.1
+# apache-airflow-providers-postgres==5.10.0
+# apache-airflow-providers-slack==8.3.0
+
+# ── Utilities ────────────────────────────────────────────────
+python-dateutil==2.8.2
+pytz==2024.1

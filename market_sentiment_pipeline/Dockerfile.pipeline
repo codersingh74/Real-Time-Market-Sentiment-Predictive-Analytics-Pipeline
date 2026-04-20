@@ -1,0 +1,33 @@
+# Dockerfile.pipeline
+# ─────────────────────
+# Used by: twitter-producer, reddit-producer, stock-producer, kafka-consumer
+
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# System dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc libpq-dev curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir \
+    kafka-python==2.0.2 \
+    tweepy==4.14.0 \
+    praw==7.7.1 \
+    requests==2.31.0 \
+    pandas==2.1.4 \
+    numpy==1.26.3 \
+    vaderSentiment==3.3.2 \
+    scikit-learn==1.4.0 \
+    psycopg2-binary==2.9.9 \
+    python-dotenv==1.0.0 \
+    python-dateutil==2.8.2
+
+# Copy project source
+COPY . .
+
+ENV PYTHONPATH=/app
+ENV PYTHONUNBUFFERED=1
